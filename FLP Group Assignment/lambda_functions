@@ -1,0 +1,21 @@
+// Lambda Functions
+digraph {
+	subgraph cluster_map {
+		label="map(lambda x: x * 2, example_list)"
+		map_input [label="Input: [1, 2, 3, 4, 5]"]
+		map_output [label="Output: [2, 4, 6, 8, 10]"]
+		map_input -> map_output
+	}
+	subgraph cluster_filter {
+		label="filter(lambda x: x % 2 == 0, example_list)"
+		filter_input [label="Input: [1, 2, 3, 4, 5]"]
+		filter_output [label="Output: [2, 4]"]
+		filter_input -> filter_output
+	}
+	subgraph cluster_reduce {
+		label="reduce(lambda x, y: x + y, example_list)"
+		reduce_input [label="Input: [1, 2, 3, 4, 5]"]
+		reduce_output [label="Output: 15"]
+		reduce_input -> reduce_output
+	}
+}

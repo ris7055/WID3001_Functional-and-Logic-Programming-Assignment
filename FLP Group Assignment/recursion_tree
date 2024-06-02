@@ -1,0 +1,28 @@
+// Recursion Tree
+digraph {
+	root_WARNING [label="Counter({'WARNING': 1})"]
+	root_remaining [label="count_occurrences(remaining)"]
+	root -> root_WARNING
+	root -> root_remaining
+	root_remaining_DEBUG [label="Counter({'DEBUG': 1})"]
+	root_remaining_remaining [label="count_occurrences(remaining)"]
+	root_remaining -> root_remaining_DEBUG
+	root_remaining -> root_remaining_remaining
+	root_remaining_remaining_ERROR [label="Counter({'ERROR': 1})"]
+	root_remaining_remaining_remaining [label="count_occurrences(remaining)"]
+	root_remaining_remaining -> root_remaining_remaining_ERROR
+	root_remaining_remaining -> root_remaining_remaining_remaining
+	root_remaining_remaining_remaining_WARNING [label="Counter({'WARNING': 1})"]
+	root_remaining_remaining_remaining_remaining [label="count_occurrences(remaining)"]
+	root_remaining_remaining_remaining -> root_remaining_remaining_remaining_WARNING
+	root_remaining_remaining_remaining -> root_remaining_remaining_remaining_remaining
+	root_remaining_remaining_remaining_remaining_DEBUG [label="Counter({'DEBUG': 1})"]
+	root_remaining_remaining_remaining_remaining_remaining [label="count_occurrences(remaining)"]
+	root_remaining_remaining_remaining_remaining -> root_remaining_remaining_remaining_remaining_DEBUG
+	root_remaining_remaining_remaining_remaining -> root_remaining_remaining_remaining_remaining_remaining
+	root_remaining_remaining_remaining_remaining_remaining_ERROR [label="Counter({'ERROR': 1})"]
+	root_remaining_remaining_remaining_remaining_remaining_remaining [label="count_occurrences(remaining)"]
+	root_remaining_remaining_remaining_remaining_remaining -> root_remaining_remaining_remaining_remaining_remaining_ERROR
+	root_remaining_remaining_remaining_remaining_remaining -> root_remaining_remaining_remaining_remaining_remaining_remaining
+	root_remaining_remaining_remaining_remaining_remaining_remaining [label="..."]
+}
